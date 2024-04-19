@@ -100,6 +100,7 @@ const TextareaAutosize: React.ForwardRefRenderFunction<
     React.useLayoutEffect(resizeTextarea);
     useWindowResizeListener(resizeTextarea);
     useFontsLoadedListener(resizeTextarea);
+    ref.current?.addEventListener('valueChanged', resizeTextarea);
     return <textarea {...props} onChange={handleChange} ref={ref} />;
   }
 
